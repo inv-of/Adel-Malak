@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Adel&Malak Wedding Invetation</title>
+
+  <!-- Elegant Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
+
+ <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#F8FAFC;
+      color:#9AA6B2;
+      overflow-x:hidden;
+      font-family:'Cinzel', serif;
+      position:relative;
+    }
+
+    /* ================= FLOATING ICONS ================= */
+
+    .floating-icons{
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      overflow:hidden;
+      pointer-events:none;
+      z-index:0;
+    }
+
+    .floating-icons span{
+      position:absolute;
+      bottom:-50px;
+      font-size:28px;
+      opacity:0.18;
+      animation:floatIcons linear infinite;
+    }
+
+    .countdown-icons span{
+      color:#D9EAFD;
+    }
+
+    .message-icons span{
+      color:#BCCCDC;
+    }
+
+    @keyframes floatIcons{
+      0%{
+        transform:translateY(0) rotate(0deg) scale(0.8);
+        opacity:0;
+      }
+      10%{opacity:0.18;}
+      50%{opacity:0.3;}
+      100%{
+        transform:translateY(-120vh) rotate(360deg) scale(1.2);
+        opacity:0;
+      }
+    }
+
+    section{
+      width:100%;
+      padding:100px 20px;
+      position:relative;
+      z-index:2;
+    }
+
+    h2{
+      text-align:center;
+      font-size:52px;
+      font-family:'Great Vibes', cursive;
+      margin-bottom:25px;
+      color:#9AA6B2;
+      font-weight:500;
+      letter-spacing:2px;
+    }
+
+    /* ================= HERO ================= */
+
+    .hero{
+      height:100vh;
+      background:url("background.jpg");
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      overflow:hidden;
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      width:500px;
+      height:500px;
+      border:1px solid rgba(154,166,178,0.2);
+      border-radius:50%;
+      animation:pulse 6s infinite;
+    }
+
+    .hero-content{
+      position:relative;
+      z-index:2;
+      padding:60px 40px;
+      border:1px solid rgba(154,166,178,0.3);
+      background:rgba(248,250,252,0.2);
+      backdrop-filter:blur(6px);
+      animation:fadeUp 2s ease;
+      max-width:750px;
+    }
+
+    .hero h1{
+      font-family:'Great Vibes', cursive;
+      font-size:100px;
+      color:#FFFFFF;
+      font-weight:400;
+    }
+
+    .hero p{
+      margin-top:15px;
+      font-size:24px;
+      letter-spacing:4px;
+      color:#FFFFFF;
+    }
+
+    .date{
+      margin-top:35px;
+      font-size:26px;
+      line-height:2;
+      color:#FFFFFF;
+    }
+
+    /* ================= COUNTDOWN ================= */
+
+    .countdown{
+      background:#BCCCDC;
+      text-align:center;
+      color:#F8FAFC;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .h3{ color:#F8FAFC; }
+
+    .countdown-container{
+      display:flex;
+      justify-content:center;
+      gap:25px;
+      flex-wrap:wrap;
+      margin-top:50px;
+    }
+
+    .box{
+      width:180px;
+      padding:35px 20px;
+      border-radius:25px;
+      background:#F8FAFC;
+      border:1px solid rgba(154,166,178,0.15);
+      transition:0.5s;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .box h3{
+      font-size:58px;
+      color:#9AA6B2;
+      margin-bottom:10px;
+    }
+
+    .box span{
+      font-size:18px;
+      letter-spacing:3px;
+      color:#9AA6B2;
+    }
+
+    /* ================= LOCATION ================= */
+
+    .location{
+      text-align:center;
+      background:#F8FAFC;
+    }
+
+    .location-text{
+      color:#9AA6B2;
+      font-size:26px;
+      line-height:2;
+      margin-bottom:40px;
+    }
+
+    .map{
+      max-width:950px;
+      margin:auto;
+      border-radius:25px;
+      overflow:hidden;
+      border:1px solid rgba(154,166,178,0.2);
+      box-shadow:0 0 30px rgba(0,0,0,0.08);
+    }
+
+    iframe{
+      width:100%;
+      height:450px;
+      border:0;
+    }
+
+    /* ================= MESSAGE ================= */
+
+    .message{
+      background:#D9EAFD;
+      text-align:center;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .message-content{
+      max-width:850px;
+      margin:auto;
+      font-size:30px;
+      line-height:2;
+      color:#9AA6B2;
+    }
+
+    .signature{
+      margin-top:45px;
+      font-family:'Great Vibes', cursive;
+      font-size:60px;
+      color:#FFFFFF;
+    }
+
+    /* ================= ANIMATIONS ================= */
+
+    @keyframes fadeUp{
+      from{opacity:0;transform:translateY(40px);}
+      to{opacity:1;transform:translateY(0);}
+    }
+
+    @keyframes pulse{
+      0%{transform:scale(0.9);opacity:0.3;}
+      50%{transform:scale(1);opacity:0.1;}
+      100%{transform:scale(1.1);opacity:0;}
+    }
+
+    /* ================= MOBILE ================= */
+
+    @media(max-width:768px){
+      h2{font-size:38px;}
+      .hero h1{font-size:65px;}
+      .hero p{font-size:18px;}
+      .date{font-size:20px;}
+      .box h3{font-size:42px;}
+      .message-content{font-size:22px;}
+      .signature{font-size:45px;}
+    }
+
+    .hidden{
+      opacity:0;
+      transform:translateY(80px);
+      transition:all 1.2s ease;
+    }
+
+    .show{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    /* ================= RSVP ================= */
+
+    .rsvp{
+      background:#F8FAFC;
+      text-align:center;
+    }
+
+    .rsvp-box{
+      max-width:600px;
+      margin:auto;
+      background:#D9EAFD;
+      padding:40px;
+      border-radius:25px;
+      border:1px solid rgba(154,166,178,0.2);
+    }
+
+    .rsvp input,
+    .rsvp select{
+      width:100%;
+      padding:15px;
+      margin:10px 0;
+      border-radius:12px;
+      border:1px solid rgba(154,166,178,0.3);
+      outline:none;
+      font-family:'Cinzel', serif;
+      background:#F8FAFC;
+      color:#9AA6B2;
+    }
+
+    .rsvp button{
+      width:100%;
+      padding:15px;
+      margin-top:15px;
+      border:none;
+      border-radius:12px;
+      background:#9AA6B2;
+      color:#F8FAFC;
+      font-size:18px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .rsvp button:hover{
+      opacity:0.85;
+      transform:scale(1.02);
+    }
+
+
+  </style>
+</head>
+<body>
+
+  
+  <!-- ================= HERO SECTION ================= -->
+
+  <section class="hero hidden">
+
+    <div class="hero-content">
+
+      <h1>Adel & Malak</h1>
+
+      <p>TOGETHER WITH THEIR FAMILIES</p>
+
+      <div class="date">
+        Thursday • August 20th 2026 <br>
+        6:00 PM
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ================= COUNTDOWN ================= -->
+
+  <section class="countdown hidden">
+    <div class="floating-icons countdown-icons">
+
+  <span style="left:8%; animation-duration:12s;">❤</span>
+  <span style="left:20%; animation-duration:18s;">❀</span>
+  <span style="left:35%; animation-duration:14s;">❤</span>
+  <span style="left:50%; animation-duration:20s;">❀</span>
+  <span style="left:65%; animation-duration:15s;">❤</span>
+  <span style="left:80%; animation-duration:17s;">❀</span>
+
+</div>
+
+    <h2 class="h3">Countdown To Our Forever</h2>
+
+    <div class="countdown-container">
+
+      <div class="box">
+        <h3 id="days">00</h3>
+        <span>DAYS</span>
+      </div>
+
+      <div class="box">
+        <h3 id="hours">00</h3>
+        <span>HOURS</span>
+      </div>
+
+      <div class="box">
+        <h3 id="minutes">00</h3>
+        <span>MINUTES</span>
+      </div>
+
+      <div class="box">
+        <h3 id="seconds">00</h3>
+        <span>SECONDS</span>
+      </div>
+
+    </div>
+    
+  </section>
+
+  <!-- ================= LOCATION ================= -->
+
+  <section class="location hidden">
+
+    <h2 class="h2">Wedding Venue</h2>
+
+    <div class="location-text">
+      Kempiniski Royal Maxim Palace <br>
+      علي الدائري ، التجمع الاول
+    </div>
+
+    <div class="map">
+
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.176592862473!2d31.419133!3d30.060472200000007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583d0058327ded%3A0x34af5d4b8c00fb77!2sKempinski%20royal%20maxim!5e0!3m2!1sen!2seg!4v1779905384770!5m2!1sen!2seg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+    </div>
+
+  </section>
+
+  <!-- ================= MESSAGE ================= -->
+
+  <section class="message hidden">
+    <div class="floating-icons message-icons">
+
+  <span style="left:10%; animation-duration:14s;">❀</span>
+  <span style="left:25%; animation-duration:20s;">❤</span>
+  <span style="left:40%; animation-duration:16s;">❀</span>
+  <span style="left:60%; animation-duration:18s;">❤</span>
+  <span style="left:78%; animation-duration:13s;">❀</span>
+  <span style="left:90%; animation-duration:19s;">❤</span>
+
+</div>
+
+    <h2 class="h2">Invitation</h2>
+
+    <div class="message-content">
+
+      With hearts full of love and joy, <br>
+      we invite you to celebrate our special day.
+      <br><br>
+
+      Your presence will make this beautiful occasion
+      even more meaningful and unforgettable.
+      <br><br>
+
+      Join us for an elegant evening filled with love,
+      laughter, happiness, and forever memories.
+
+      <div class="signature">
+        Adel & Malak
+      </div>
+
+    </div>
+
+  </section>
+   <!-- ================= RSVP SECTION ================= -->
+  <section class="rsvp">
+    <h2>RSVP</h2>
+
+    <div class="rsvp-box">
+      <input type="text" placeholder="Your Name" />
+      
+      <select>
+        <option value="">Will you attend?</option>
+        <option>Yes, I will attend</option>
+        <option>No, I can't make it</option>
+      </select>
+
+      <input type="text" placeholder="Number of guests" />
+
+      <button>Send RSVP</button>
+    </div>
+    <div class="floating-icons message-icons">
+
+  <span style="left:10%; animation-duration:14s;">❀</span>
+  <span style="left:25%; animation-duration:20s;">❤</span>
+  <span style="left:40%; animation-duration:16s;">❀</span>
+  <span style="left:60%; animation-duration:18s;">❤</span>
+  <span style="left:78%; animation-duration:13s;">❀</span>
+  <span style="left:90%; animation-duration:19s;">❤</span>
+
+</div>
+  </section>
+
+  <!-- ================= COUNTDOWN SCRIPT ================= -->
+
+  <script>
+
+    const weddingDate = new Date("August 20, 2026 18:00:00").getTime();
+
+    const countdown = setInterval(function(){
+
+      const now = new Date().getTime();
+
+      const distance = weddingDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("days").innerHTML = days;
+      document.getElementById("hours").innerHTML = hours;
+      document.getElementById("minutes").innerHTML = minutes;
+      document.getElementById("seconds").innerHTML = seconds;
+
+      if(distance < 0){
+        clearInterval(countdown);
+      }
+
+    }, 1000);
+
+  </script>
+  <script>
+
+  const sections = document.querySelectorAll('.hidden');
+
+  const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach((entry) => {
+
+      if(entry.isIntersecting){
+        entry.target.classList.add('show');
+      }
+
+    });
+
+  }, {
+    threshold:0.2
+  });
+
+  sections.forEach((section) => {
+    observer.observe(section);
+  });
+
+</script>
+<script>
+const scriptURL = "https://script.google.com/macros/s/AKfycbwddPtg_Iuc6lAVa0-eXRr_THvGoUyiCINo2fnnrPHE9R_yBxobwfAxGvUIVkP-nQBiFA/exec"
+
+document.querySelector(".rsvp button").addEventListener("click", async function () {
+
+  const name = document.querySelector(".rsvp input[placeholder='Your Name']").value.trim();
+  const guests = document.querySelector(".rsvp input[placeholder='Number of guests']").value.trim();
+  const attendance = document.querySelector(".rsvp select").value;
+
+  // ✅ FULL VALIDATION
+  if (name === "" || attendance === "" || guests === "") {
+    alert("Please fill all fields before submitting 💌");
+    return;
+  }
+
+  // optional: ensure guests is a number
+  if (isNaN(guests) || Number(guests) <= 0) {
+    alert("Please enter a valid number of guests");
+    return;
+  }
+
+  const data = {
+    name: name,
+    attendance: attendance,
+    guests: guests
+  };
+
+  try {
+    await fetch(scriptURL, {
+      method: "POST",
+      body: JSON.stringify(data)
+    });
+
+    alert("RSVP sent successfully 💌");
+
+    // reset
+    document.querySelector(".rsvp input[placeholder='Your Name']").value = "";
+    document.querySelector(".rsvp input[placeholder='Number of guests']").value = "";
+    document.querySelector(".rsvp select").value = "";
+
+  } catch (error) {
+    alert("Error sending RSVP");
+  }
+
+});
+</script>
+
+</body>
+</html>
